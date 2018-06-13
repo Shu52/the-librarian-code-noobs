@@ -1,6 +1,70 @@
 
-const horrorDatabase = [
-    {
+const bookDatabase = []
+const books = Object.create({}, {
+        author: {
+            value: '',
+            writable: true,
+            enumerable: true
+     },
+        title: {
+            value: '',
+            writable: true,
+            enumerable: true
+     },
+        genre: {
+            value: '',
+            writable: true,
+            enumerable: true
+    },
+        language: {
+            value: '',
+            writable: true,
+            enumerable: true
+    },
+        year: {
+            value: '',
+            writable: true,
+            enumerable: true
+    },
+        isbn: {
+            value: '',
+            writable: true,
+            enumerable: true
+    },
+        checkedOut: {
+            value: '',
+            writable: true,
+            enumerable: true
+    },
+        dueDate: {
+            value: '',
+            writable: true,
+            enumerable: true
+    }})
+
+    const bookCreate = (author, title, genre, language, year, ISBN, checkedOut) => {
+        const book = Object.create(books)
+
+        book.author = author
+        book.title = title  
+        book.genre = genre
+        book.language = language
+        book.year = year
+        book.ISBN = ISBN
+        book.checkedOut = false
+        bookDatabase.push(book)
+    }
+
+    bookCreate('Stephen King', 'Salems Lot', 'horror', 'english','1991',43234)
+
+    console.log(bookDatabase)
+    // bookCreate('Bram Stoker','Dracula','horror','english')
+
+        
+
+    let aBunchOfBooks = [
+        
+        {
         'author': 'Stephen King',
         'title':  'Salems Lot',
         'genre':    'horror',
@@ -50,7 +114,9 @@ const horrorDatabase = [
         'checkout': '',
         'DueDate':  ''
     }]
-    
+    for(var i = 0; i < aBunchOfBooks.length; i++) {
+        bookCreate(aBunchOfBooks[i]["author"],aBunchOfBooks[i]["title"],aBunchOfBooks[i]["genre"],aBunchOfBooks[i]["language"],aBunchOfBooks[i]["year"],aBunchOfBooks[i]["ISBN"])
+    }
     const romanceDatabase = [
         {
             'author': 'Jane Austen',
