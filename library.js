@@ -1,3 +1,4 @@
+
 const horrorDatabase = [
     {
         'author': 'Stephen King',
